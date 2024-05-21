@@ -13,6 +13,6 @@ namespace RepositoryLayer.Interfaces
         Task<IEnumerable<BookEntity>> GetCartBooks(int userId);
         Task<IEnumerable<BookEntity>> AddToCart(CartRequest cartRequest, int userId);
         Task<CartRequest> UpdateQuantity(int userId, CartRequest cartRequest);
-        Task<bool> DeleteCart(int userId, int id);
+        Task<bool> DeleteCart(int userId, int BookId);
     }
 }

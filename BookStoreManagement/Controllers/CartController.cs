@@ -51,10 +51,10 @@ namespace BookStoreManagement.Controllers
         }
 
         [HttpDelete("DeleteCart")]
-        public async Task<IActionResult> DeleteCart( int cartId)
+        public async Task<IActionResult> DeleteCart( int BookId)
         {
             int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            var isDeleted = await _Cart.DeleteCart(userId, cartId);
+            var isDeleted = await _Cart.DeleteCart(userId, BookId);
             var response = new ResponseModel<bool> { Message = "Deleted from cart successfully", Data = isDeleted };
             return Ok(response);
         }
