@@ -34,9 +34,9 @@ namespace BusinessLayer.Services
             return await _Cart.UpdateQuantity(userId, cartRequest);
         }
 
-        public async Task<bool> DeleteCart(int userId, int id)
+        public async Task<bool> DeleteCart(int userId, int BookId)
         {
-            return await _Cart.DeleteCart(userId, id);
+            return await _Cart.DeleteCart(userId, BookId);
         }
     }
 }

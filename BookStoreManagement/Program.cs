@@ -18,6 +18,8 @@ builder.Services.AddScoped<IBookDetailsBL,BookDetailsServiceBL>();
 builder.Services.AddScoped<IBookDetailsRL, BookDetailsServiceRL>();
 builder.Services.AddScoped<ICartBL,CartServiceBL>();
 builder.Services.AddScoped<ICartRL, CartServiceRL>();
+builder.Services.AddScoped<IWishListBL, WishListServiceBL>();
+builder.Services.AddScoped<IWishListRepo, WishListServiceRepo>();
 //----------------
 builder.Services.AddCors(Options =>
 {

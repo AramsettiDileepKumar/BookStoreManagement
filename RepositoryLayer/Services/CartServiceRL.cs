@@ -77,15 +77,15 @@ namespace RepositoryLayer.Services
                 throw new Exception(ex.Message);
             }
         }
-        public async Task<bool> DeleteCart(int userId, int CartId)
+        public async Task<bool> DeleteCart(int userId, int BookId)
         {
             try
             {
                 var parameters = new DynamicParameters();
-                parameters.Add("@CartId", CartId);
+                parameters.Add("@BookId", BookId);
                 parameters.Add("@UserId", userId);
-                await _context.CreateConnection().ExecuteAsync("deleteCart_SP", parameters);
-                return await IsCartItemExists(userId, CartId);
+                return await _context.CreateConnection().ExecuteAsync("deleteCart_SP", parameters) > 0;
+        
             }
             catch (SqlException ex)
             {
