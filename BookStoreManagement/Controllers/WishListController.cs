@@ -18,7 +18,7 @@ namespace BookStoreManagement.Controllers
         {
             _wishlistService = List;
         }
-        [HttpPost("{BookId}")]
+        [HttpPost("addwishlist{BookId}")]
         public async Task<IActionResult> AddToWishlist(int BookId)
         {
             try
@@ -49,13 +49,13 @@ namespace BookStoreManagement.Controllers
             }
         }
 
-        [HttpDelete("DeleteWishlist/{wishlistId}")]
-        public async Task<IActionResult> DeleteWishlist(int wishlistId)
+        [HttpDelete("DeleteWishlist/{BookId}")]
+        public async Task<IActionResult> DeleteWishlist(int BookId)
         {
             try
             {
                 int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                var isDeleted = await _wishlistService.DeleteWishlist(userId, wishlistId);
+                var isDeleted = await _wishlistService.DeleteWishlist(userId, BookId);
                 var response = new ResponseModel<bool> { Message = "Deleted from wishlist successfully", Data = isDeleted };
                 return Ok(response);
             }

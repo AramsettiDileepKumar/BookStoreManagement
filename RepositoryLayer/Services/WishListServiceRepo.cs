@@ -57,13 +57,13 @@ namespace RepositoryLayer.Services
             }
         }
 
-        public async Task<bool> DeleteWishlist(int userId, int wishlistId)
+        public async Task<bool> DeleteWishlist(int userId, int BookId)
         {
             try
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("UserId", userId);
-                parameters.Add("WishListId", wishlistId);
+                parameters.Add("BookId", BookId);
                 var result = await _context.CreateConnection().ExecuteAsync("deleteWishList_SP", parameters);
                 return result > 0;
             }
