@@ -24,9 +24,9 @@ namespace BusinessLayer.Services
         {
             return await listRepo.GetWishlistBooks(userId);
         }
-        public async Task<bool> DeleteWishlist(int UserId,int wishListId)
+        public async Task<bool> DeleteWishlist(int UserId,int BookId)
         {
-            return await listRepo.DeleteWishlist(UserId,wishListId);
+            return await listRepo.DeleteWishlist(UserId,BookId);
         }
     }
 }

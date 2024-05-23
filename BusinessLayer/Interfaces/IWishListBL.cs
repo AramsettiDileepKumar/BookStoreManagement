@@ -11,6 +11,6 @@ namespace BusinessLayer.Interfaces
     {
         Task<bool> AddToWishList(int userId, int BookId);
         Task<IEnumerable<BookEntity>> GetWishlistBooks(int userId);
-        Task<bool> DeleteWishlist(int UserId,int wishlistId);
+        Task<bool> DeleteWishlist(int UserId,int BookId);
     }
 }

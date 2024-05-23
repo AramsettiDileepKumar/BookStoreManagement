@@ -11,6 +11,6 @@ namespace RepositoryLayer.Interfaces
     {
         Task<bool> AddToWishList(int userId, int BookId);
         Task<IEnumerable<BookEntity>> GetWishlistBooks(int userId);
-        Task<bool> DeleteWishlist(int userId,int wishlistId);
+        Task<bool> DeleteWishlist(int userId,int BookId);
     }
 }

@@ -20,6 +20,9 @@ builder.Services.AddScoped<ICartBL,CartServiceBL>();
 builder.Services.AddScoped<ICartRL, CartServiceRL>();
 builder.Services.AddScoped<IWishListBL, WishListServiceBL>();
 builder.Services.AddScoped<IWishListRepo, WishListServiceRepo>();
+builder.Services.AddScoped<IAddressBL, AddressServiceBL>();
+builder.Services.AddScoped<IAddressRepo,AddressServiceRepo>();
+
 //----------------
 builder.Services.AddCors(Options =>
 {
